@@ -9,6 +9,7 @@ using DalService.Repositories;
 
 namespace MastersNet.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private IRepository<Speciality> _repository;
