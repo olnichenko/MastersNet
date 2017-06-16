@@ -1,0 +1,105 @@
+﻿@using System.Threading
+@using FreeGeoIp.Models
+@using MastersNet.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Resources.Resource.ApplicationName</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="/node_modules/core-js/client/shim.min.js"></script>
+    <script src="/node_modules/zone.js/dist/zone.js"></script>
+    <script src="/node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/systemjs.config.js"></script>
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(Resources.Resource.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(Resources.Resource.About, "About", "Home")</li>
+                    <li>@Html.ActionLink(Resources.Resource.Contact, "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <footer style="text-align: center;">
+            <p>&copy; @DateTime.Now.Year - @Resources.Resource.ApplicationName</p>
+            @{
+                var ipInfo = Session[Constants.IpInfoSession] as IpInfo;
+                <table>
+                    <tr>
+                        <td>Ip</td>
+                        <td>@ipInfo.Ip</td>
+                    </tr>
+                    <tr>
+                        <td>Country code</td>
+                        <td>@ipInfo.CountryCode</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>@ipInfo.CountryName</td>
+                    </tr>
+                    <tr>
+                        <td>Region code</td>
+                        <td>@ipInfo.RegionCode</td>
+                    </tr>
+                    <tr>
+                        <td>RegionName</td>
+                        <td>@ipInfo.RegionName</td>
+                    </tr><tr>
+                        <td>City</td>
+                        <td>@ipInfo.City</td>
+                    </tr>
+                    <tr>
+                        <td>Zip code</td>
+                        <td>@ipInfo.ZipCode</td>
+                    </tr>
+                    <tr>
+                        <td>TimeZone</td>
+                        <td>@ipInfo.TimeZone</td>
+                    </tr>
+                    <tr>
+                        <td>Latitude</td>
+                        <td>@ipInfo.Latitude</td>
+                    </tr>
+                    <tr>
+                        <td>LongiTude</td>
+                        <td>@ipInfo.Longitude</td>
+                    </tr>
+                </table>
+            }
+            @*@using (Html.BeginForm("ChangeCulture", "Home"))
+            {
+                <select name="lang">
+                    <option disabled selected>@Resources.Resource.SelectLanguage</option>
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                </select>
+                <input type="submit" name="submit" value="@Resources.Resource.SelectLanguage">
+            }
+            <p>@Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName</p>
+            <p>@Thread.CurrentThread.CurrentUICulture</p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
