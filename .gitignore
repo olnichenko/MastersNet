@@ -240,5 +240,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-MastersNet/Configuration/AppSettings.config
-MastersNet/Configuration/ConnectionStrings.config
+MastersNet/Configuration/
+MastersNet/Configuration/
+
