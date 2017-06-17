@@ -73,10 +73,6 @@ namespace MastersNet
             facebookAuthenticationOptions.Scope.Add("email");
             app.UseFacebookAuthentication(facebookAuthenticationOptions);
 
-            //app.UseFacebookAuthentication(
-            //   appId: "1553326328073966",
-            //   appSecret: "0de8542e6dccdc3fd0000087e43164bc");
-
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
             //    ClientId = "",
