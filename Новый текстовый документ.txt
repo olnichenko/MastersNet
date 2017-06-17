@@ -1,0 +1,3 @@
+<add name="DefaultConnection" connectionString="Data Source=DESKTOP-TP0TR0K\SQLEXPRESS;Initial Catalog=MastersNet;Integrated Security=True" providerName="System.Data.SqlClient" />
+<add key="FacebookAppId" value="1553326328073966"/>
+  <add key="FacebookAppSecret" value="0de8542e6dccdc3fd0000087e43164bc"/>

@@ -1,4 +1,5 @@
 ﻿@using MastersNet.Helpers
+@using MastersNet.Models
 @*@model MastersNet.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
@@ -41,6 +42,7 @@
 <register>
     @Html.Loader()
 </register>
+@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo8tyV8DN_8ohGO7gXZAEdlizNgNZ34Rk&libraries=places"></script>

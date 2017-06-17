@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using MastersNet.Configuration;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -57,8 +58,8 @@ namespace MastersNet
             //   consumerSecret: "");
             var facebookAuthenticationOptions = new FacebookAuthenticationOptions
             {
-                AppId = "1553326328073966",
-                AppSecret = "0de8542e6dccdc3fd0000087e43164bc",
+                AppId = ConfigurationHelper.FacebookAppId,
+                AppSecret = ConfigurationHelper.FacebookAppSecret,
                 Provider = new FacebookAuthenticationProvider
                 {
                     OnAuthenticated = context =>
