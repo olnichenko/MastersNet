@@ -8,6 +8,7 @@
     "tsc:w": "tsc -w"
   },
   "dependencies": {
+    "@agm/core": "",
     "@angular/common": "~4.0.0",
     "@angular/compiler": "~4.0.0",
     "@angular/core": "~4.0.0",
@@ -16,13 +17,13 @@
     "@angular/platform-browser": "~4.0.0",
     "@angular/platform-browser-dynamic": "~4.0.0",
     "@angular/router": "~4.0.0",
-    "@agm/core": "",
-
     "angular-in-memory-web-api": "~0.3.0",
-    "systemjs": "0.19.40",
     "core-js": "^2.4.1",
+    "devextreme": "^17.1.4",
+    "devextreme-angular": "^17.1.4",
     "reflect-metadata": "^0.1.8",
     "rxjs": "5.0.1",
+    "systemjs": "0.19.40",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

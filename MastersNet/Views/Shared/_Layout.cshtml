@@ -40,7 +40,7 @@
         @RenderBody()
         <footer style="text-align: center;">
             <p>&copy; @DateTime.Now.Year - @Resources.Resource.ApplicationName</p>
-            @{
+            @*@{
                 var ipInfo = Session[Constants.IpInfoSession] as IpInfo;
                 <table>
                     <tr>
@@ -83,7 +83,7 @@
                         <td>@ipInfo.Longitude</td>
                     </tr>
                 </table>
-            }
+            }*@
             @*@using (Html.BeginForm("ChangeCulture", "Home"))
             {
                 <select name="lang">
